@@ -34,10 +34,10 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-deep); color:var(--text); font-size:14px; }
-
+ 
 /* LAYOUT */
 .shell { display:flex; height:100vh; overflow:hidden; }
-
+ 
 /* SIDEBAR */
 .sidebar {
   width:var(--sidebar); min-width:var(--sidebar);
@@ -86,12 +86,12 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 }
 .user-name { font-size:13px; font-weight:500; }
 .user-role { font-size:11px; color:var(--text3); }
-
+ 
 /* MAIN */
 .main { flex:1; overflow-y:auto; background:var(--bg-deep); }
 .main::-webkit-scrollbar { width:4px; }
 .main::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
-
+ 
 /* TOPBAR */
 .topbar {
   position:sticky; top:0; z-index:50;
@@ -111,10 +111,10 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 .breadcrumb { font-size:12px; color:var(--text3); }
 .breadcrumb a { color:var(--accent); text-decoration:none; }
 .topbar-right { margin-left:auto; display:flex; align-items:center; gap:10px; }
-
+ 
 /* PAGE CONTENT */
 .content { padding:24px 28px 60px; }
-
+ 
 /* STAT STRIP */
 .stat-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:24px; }
 .stat-card {
@@ -126,7 +126,7 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 .stat-val { font-family:'Syne',sans-serif; font-size:24px; font-weight:800; line-height:1; margin-bottom:4px; }
 .stat-sub { font-size:11.5px; color:var(--text3); }
 .stat-ico { position:absolute; right:14px; top:14px; font-size:20px; opacity:.15; }
-
+ 
 /* CARD */
 .card {
   background:var(--bg-card); border:1px solid var(--border);
@@ -134,7 +134,7 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 }
 .card-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
 .card-title { font-family:'Syne',sans-serif; font-size:14px; font-weight:700; }
-
+ 
 /* BUTTONS */
 .btn {
   padding:9px 18px; border-radius:var(--radius-sm); border:none;
@@ -152,7 +152,7 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 .btn-sm { padding:5px 12px; font-size:12px; }
 .btn-xs { padding:4px 9px; font-size:11px; }
 .btn-icon { width:32px; height:32px; padding:0; justify-content:center; }
-
+ 
 /* BADGE */
 .badge {
   display:inline-flex; align-items:center; gap:4px;
@@ -164,7 +164,7 @@ html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-
 .badge.info    { background:rgba(79,70,229,.12);   color:var(--accent); }
 .badge.cyan    { background:rgba(8,145,178,.12);   color:var(--accent3); }
 .badge.gray    { background:#F3F4F6; color:var(--text2); }
-
+ 
 /* FILTER ROW */
 .filter-row { display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
 .search-wrap { position:relative; flex:1; min-width:220px; }
@@ -180,7 +180,7 @@ input:focus, select:focus, textarea:focus { border-color:var(--accent); box-shad
 textarea { resize:vertical; min-height:80px; }
 select option { background:#fff; }
 label { font-size:12px; color:var(--text2); font-weight:500; text-transform:uppercase; letter-spacing:.8px; }
-
+ 
 /* TABLE */
 .table-wrap { overflow-x:auto; }
 table { width:100%; border-collapse:collapse; }
@@ -193,14 +193,14 @@ tbody tr { transition:background .1s; }
 tbody tr:hover { background:var(--bg-hover); }
 tbody td { padding:12px 14px; font-size:13px; border-bottom:1px solid var(--border); vertical-align:middle; }
 tbody tr:last-child td { border-bottom:none; }
-
+ 
 /* PRODUCT ICON */
 .prod-icon-sm {
   width:38px; height:38px; border-radius:9px;
   display:flex; align-items:center; justify-content:center;
   font-size:18px; flex-shrink:0;
 }
-
+ 
 /* FORM */
 .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .form-group { display:flex; flex-direction:column; gap:6px; }
@@ -213,7 +213,7 @@ tbody tr:last-child td { border-bottom:none; }
   font-size:13px; color:var(--text2); white-space:nowrap;
 }
 .input-prefix input { border-radius:0 var(--radius-sm) var(--radius-sm) 0; flex:1; }
-
+ 
 /* MODAL OVERLAY */
 .modal-overlay {
   display:none; position:fixed; inset:0;
@@ -244,7 +244,7 @@ tbody tr:last-child td { border-bottom:none; }
   display:flex; align-items:center; justify-content:center; font-size:14px;
 }
 .modal-close:hover { background:var(--border); color:var(--text); }
-
+ 
 /* CONFIRM MODAL */
 .confirm-modal {
   background:var(--bg-base); border-radius:var(--radius);
@@ -255,7 +255,7 @@ tbody tr:last-child td { border-bottom:none; }
 .confirm-title { font-family:'Syne',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; }
 .confirm-desc { font-size:13.5px; color:var(--text2); margin-bottom:20px; line-height:1.6; }
 .confirm-btns { display:flex; gap:10px; justify-content:center; }
-
+ 
 /* PAGINATION */
 .pagination { display:flex; align-items:center; gap:6px; }
 .page-btn {
@@ -267,7 +267,7 @@ tbody tr:last-child td { border-bottom:none; }
 .page-btn:hover { background:var(--bg-hover); color:var(--text); }
 .page-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .page-btn:disabled { opacity:.4; cursor:default; }
-
+ 
 /* TOAST */
 .toast-wrap { position:fixed; bottom:24px; right:24px; z-index:999; display:flex; flex-direction:column; gap:8px; }
 .toast {
@@ -282,10 +282,10 @@ tbody tr:last-child td { border-bottom:none; }
 .toast.danger  { border-left:3px solid var(--red); }
 .toast.info    { border-left:3px solid var(--accent); }
 @keyframes slideIn { from { transform:translateX(60px); opacity:0; } to { transform:translateX(0); opacity:1; } }
-
+ 
 /* DIVIDER */
 .divider { border:none; border-top:1px solid var(--border); margin:20px 0; }
-
+ 
 /* SWITCH */
 .switch { position:relative; display:inline-block; width:38px; height:22px; }
 .switch input { opacity:0; width:0; height:0; }
@@ -300,12 +300,12 @@ tbody tr:last-child td { border-bottom:none; }
 }
 .switch input:checked + .switch-slider { background:var(--accent); }
 .switch input:checked + .switch-slider:before { transform:translateX(16px); }
-
+ 
 /* EMPTY STATE */
 .empty-state { text-align:center; padding:60px 20px; color:var(--text3); }
 .empty-state i { font-size:48px; margin-bottom:14px; opacity:.4; }
 .empty-state p { font-size:14px; }
-
+ 
 /* CATEGORY TABS */
 .cat-tabs { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:16px; }
 .cat-tab {
@@ -315,12 +315,12 @@ tbody tr:last-child td { border-bottom:none; }
 }
 .cat-tab:hover { background:var(--bg-hover); color:var(--text); }
 .cat-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
-
+ 
 /* PROFIT BADGE */
 .profit { font-size:11.5px; font-weight:600; }
 .profit.pos { color:var(--green); }
 .profit.neg { color:var(--red); }
-
+ 
 ::-webkit-scrollbar { width:4px; height:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
@@ -328,7 +328,7 @@ tbody tr:last-child td { border-bottom:none; }
 </head>
 <body>
 <div class="shell">
-
+ 
 <!-- SIDEBAR -->
 <nav class="sidebar">
   <div class="brand">
@@ -362,10 +362,10 @@ tbody tr:last-child td { border-bottom:none; }
     </div>
   </div>
 </nav>
-
+ 
 <!-- MAIN -->
 <div class="main">
-
+ 
   <!-- TOPBAR -->
   <div class="topbar">
     <a class="topbar-back" href="zerovoxyn-admin-dashboard.html" title="Kembali ke Dashboard">
@@ -385,9 +385,9 @@ tbody tr:last-child td { border-bottom:none; }
       </button>
     </div>
   </div>
-
+ 
   <div class="content">
-
+ 
     <!-- STAT STRIP -->
     <div class="stat-strip">
       <div class="stat-card">
@@ -415,7 +415,7 @@ tbody tr:last-child td { border-bottom:none; }
         <i class="fa-solid fa-eye-slash stat-ico" style="color:var(--text3);"></i>
       </div>
     </div>
-
+ 
     <!-- CATEGORY TABS -->
     <div class="cat-tabs" id="cat-tabs">
       <div class="cat-tab active" data-cat="Semua">Semua</div>
@@ -424,7 +424,7 @@ tbody tr:last-child td { border-bottom:none; }
       <div class="cat-tab" data-cat="Kartu Kredit">💳 Kartu Kredit</div>
       <div class="cat-tab" data-cat="Subscription">📦 Subscription</div>
     </div>
-
+ 
     <!-- PRODUCT TABLE -->
     <div class="card">
       <div class="card-head">
@@ -436,7 +436,7 @@ tbody tr:last-child td { border-bottom:none; }
           </button>
         </div>
       </div>
-
+ 
       <!-- FILTER -->
       <div class="filter-row">
         <div class="search-wrap">
@@ -461,7 +461,7 @@ tbody tr:last-child td { border-bottom:none; }
           <i class="fa-solid fa-rotate-left"></i> Reset
         </button>
       </div>
-
+ 
       <!-- TABLE -->
       <div class="table-wrap">
         <table id="prod-table">
@@ -483,25 +483,25 @@ tbody tr:last-child td { border-bottom:none; }
           <tbody id="prod-tbody"></tbody>
         </table>
       </div>
-
+ 
       <!-- EMPTY STATE -->
       <div class="empty-state" id="empty-state" style="display:none;">
         <i class="fa-solid fa-box-open"></i>
         <p>Tidak ada produk ditemukan</p>
         <p style="margin-top:6px;font-size:12px;">Coba ubah filter atau <span style="color:var(--accent);cursor:pointer;" onclick="openAddModal()">tambah produk baru</span></p>
       </div>
-
+ 
       <!-- PAGINATION -->
       <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
         <span id="pagination-info" style="font-size:12px;color:var(--text3);"></span>
         <div class="pagination" id="pagination"></div>
       </div>
     </div>
-
+ 
   </div><!-- /content -->
 </div><!-- /main -->
 </div><!-- /shell -->
-
+ 
 <!-- ═══════ MODAL: TAMBAH / EDIT PRODUK ═══════ -->
 <div class="modal-overlay" id="modal-produk">
   <div class="modal">
@@ -562,7 +562,7 @@ tbody tr:last-child td { border-bottom:none; }
           <textarea id="f-desc" placeholder="Deskripsi singkat produk..."></textarea>
         </div>
       </div>
-
+ 
       <!-- MARGIN PREVIEW -->
       <div id="margin-preview" style="display:none;margin-top:14px;padding:12px 16px;background:var(--bg-card2);border:1px solid var(--border);border-radius:var(--radius-sm);">
         <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -582,7 +582,7 @@ tbody tr:last-child td { border-bottom:none; }
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════ MODAL: DETAIL PRODUK ═══════ -->
 <div class="modal-overlay" id="modal-detail">
   <div class="modal" style="width:480px;">
@@ -599,7 +599,7 @@ tbody tr:last-child td { border-bottom:none; }
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════ MODAL: KONFIRMASI HAPUS ═══════ -->
 <div class="modal-overlay" id="modal-confirm">
   <div class="confirm-modal">
@@ -614,7 +614,7 @@ tbody tr:last-child td { border-bottom:none; }
     </div>
   </div>
 </div>
-
+ 
 <!-- IMPORT MODAL -->
 <div class="modal-overlay" id="modal-import">
   <div class="modal" style="width:480px;">
@@ -640,46 +640,114 @@ tbody tr:last-child td { border-bottom:none; }
     </div>
   </div>
 </div>
-
+ 
 <!-- TOAST CONTAINER -->
 <div class="toast-wrap" id="toast-wrap"></div>
-
+ 
 <script>
 // ══════════════════════════════════════════════
-//  DATA STORE
+//  SUPABASE CONFIG
 // ══════════════════════════════════════════════
-let products = [
-  { id:1,  nama:'MLBB Diamond 500',        kategori:'Top Up Diamond', game:'Mobile Legends', modal:90000,  jual:115000, ikon:'💎', status:'Aktif',      tanggal:'20 Mei 2025', desc:'Top up 500 diamond Mobile Legends langsung ke akun.' },
-  { id:2,  nama:'MLBB Diamond 1000',       kategori:'Top Up Diamond', game:'Mobile Legends', modal:175000, jual:220000, ikon:'💎', status:'Aktif',      tanggal:'20 Mei 2025', desc:'Top up 1000 diamond Mobile Legends.' },
-  { id:3,  nama:'Free Fire 1000 Diamond',  kategori:'Top Up Diamond', game:'Free Fire',      modal:78000,  jual:98000,  ikon:'🎮', status:'Aktif',      tanggal:'18 Mei 2025', desc:'1000 diamond Free Fire langsung masuk akun.' },
-  { id:4,  nama:'Free Fire 2000 Diamond',  kategori:'Top Up Diamond', game:'Free Fire',      modal:150000, jual:185000, ikon:'🎮', status:'Promo',      tanggal:'18 Mei 2025', desc:'2000 diamond Free Fire, harga promo terbatas.' },
-  { id:5,  nama:'PUBG UC 325',             kategori:'Top Up Diamond', game:'PUBG Mobile',    modal:60000,  jual:74000,  ikon:'🏆', status:'Aktif',      tanggal:'15 Mei 2025', desc:'325 UC untuk PUBG Mobile.' },
-  { id:6,  nama:'PUBG UC 660',             kategori:'Top Up Diamond', game:'PUBG Mobile',    modal:115000, jual:140000, ikon:'🏆', status:'Aktif',      tanggal:'15 Mei 2025', desc:'660 UC untuk PUBG Mobile.' },
-  { id:7,  nama:'Genshin Genesis Crystal', kategori:'Top Up Diamond', game:'Genshin Impact', modal:130000, jual:160000, ikon:'🌟', status:'Stok Habis', tanggal:'10 Mei 2025', desc:'Genesis Crystal Genshin Impact.' },
-  { id:8,  nama:'Honkai Star Rail Stellar',kategori:'Top Up Diamond', game:'Honkai: Star Rail',modal:120000,jual:148000,ikon:'⭐', status:'Aktif',      tanggal:'10 Mei 2025', desc:'Stellar Jade Honkai Star Rail.' },
-  { id:9,  nama:'Voucher Steam Rp 100K',   kategori:'Voucher Game',   game:'Steam',          modal:85000,  jual:100000, ikon:'🎫', status:'Aktif',      tanggal:'8 Mei 2025',  desc:'Voucher Steam nominal Rp 100.000.' },
-  { id:10, nama:'Voucher Steam Rp 200K',   kategori:'Voucher Game',   game:'Steam',          modal:165000, jual:198000, ikon:'🎫', status:'Aktif',      tanggal:'8 Mei 2025',  desc:'Voucher Steam nominal Rp 200.000.' },
-  { id:11, nama:'Voucher Google Play 50K', kategori:'Voucher Game',   game:'Google Play',    modal:43000,  jual:52000,  ikon:'🟢', status:'Aktif',      tanggal:'5 Mei 2025',  desc:'Google Play Gift Card Rp 50.000.' },
-  { id:12, nama:'Voucher iTunes $10',      kategori:'Voucher Game',   game:'Apple App Store',modal:145000, jual:168000, ikon:'🍎', status:'Aktif',      tanggal:'5 Mei 2025',  desc:'iTunes & App Store Gift Card $10.' },
-  { id:13, nama:'Kartu Kredit Virtual $10',kategori:'Kartu Kredit',   game:'-',              modal:130000, jual:155000, ikon:'💳', status:'Promo',      tanggal:'1 Mei 2025',  desc:'Virtual credit card $10 untuk pembelian online.' },
-  { id:14, nama:'Kartu Kredit Virtual $25',kategori:'Kartu Kredit',   game:'-',              modal:320000, jual:375000, ikon:'💳', status:'Aktif',      tanggal:'1 Mei 2025',  desc:'Virtual credit card $25.' },
-  { id:15, nama:'Netflix 1 Bulan',         kategori:'Subscription',   game:'Netflix',        modal:45000,  jual:55000,  ikon:'📺', status:'Aktif',      tanggal:'28 Apr 2025', desc:'Akun Netflix sharing 1 bulan.' },
-  { id:16, nama:'Spotify Premium 1 Bulan', kategori:'Subscription',   game:'Spotify',        modal:18000,  jual:24000,  ikon:'🎵', status:'Nonaktif',   tanggal:'25 Apr 2025', desc:'Spotify Premium individual 1 bulan.' },
-];
-
-let nextId = 17;
-let currentCat = 'Semua';
-let currentPage = 1;
-const perPage = 8;
-let selectedIds = new Set();
+const SUPABASE_URL  = 'https://bgeixjbpplqtjulavalr.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnZWl4amJwcGxxdGp1bGF2YWxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3Nzg4NjIsImV4cCI6MjA5NTM1NDg2Mn0.KavmMHcQSOjhbdWrmILQiAt5X4lYqIPzAdFumec0E8A';
+const TABLE = 'produk';
+ 
+const sbHeaders = {
+  'Content-Type': 'application/json',
+  'apikey': SUPABASE_KEY,
+  'Authorization': 'Bearer ' + SUPABASE_KEY,
+  'Prefer': 'return=representation'
+};
+ 
+async function sbGet() {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?order=id.asc`, { headers: sbHeaders });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+ 
+async function sbInsert(data) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
+    method: 'POST', headers: sbHeaders, body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+ 
+async function sbUpdate(id, data) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?id=eq.${id}`, {
+    method: 'PATCH', headers: sbHeaders, body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+ 
+async function sbDelete(ids) {
+  const filter = ids.map(id=>`id.eq.${id}`).join(',');
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?or=(${filter})`, {
+    method: 'DELETE', headers: { ...sbHeaders, 'Prefer': 'return=minimal' }
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return true;
+}
+ 
+// ══════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════
+let products     = [];
+let currentCat   = 'Semua';
+let currentPage  = 1;
+const perPage    = 8;
+let selectedIds  = new Set();
 let pendingDeleteIds = [];
-
+let isLoading    = false;
+ 
 // ══════════════════════════════════════════════
 //  TOPBAR DATE
 // ══════════════════════════════════════════════
 document.getElementById('topbar-date').textContent =
   new Date().toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
-
+ 
+// ══════════════════════════════════════════════
+//  LOADING STATE
+// ══════════════════════════════════════════════
+function setLoading(on) {
+  isLoading = on;
+  const tbody = document.getElementById('prod-tbody');
+  const empty = document.getElementById('empty-state');
+  if (on) {
+    document.getElementById('prod-table').style.display = '';
+    empty.style.display = 'none';
+    tbody.innerHTML = `
+      <tr><td colspan="9" style="text-align:center;padding:40px;">
+        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border:3px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;"></div>
+          <div style="font-size:13px;color:var(--text3);">Memuat data dari database...</div>
+        </div>
+      </td></tr>`;
+  }
+}
+ 
+// Add spin keyframe
+const spinStyle = document.createElement('style');
+spinStyle.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+document.head.appendChild(spinStyle);
+ 
+// ══════════════════════════════════════════════
+//  LOAD DATA FROM SUPABASE
+// ══════════════════════════════════════════════
+async function loadProducts() {
+  setLoading(true);
+  try {
+    products = await sbGet();
+    render();
+    toast(`${products.length} produk dimuat dari database.`, 'info');
+  } catch(e) {
+    console.error(e);
+    toast('Gagal memuat data: ' + e.message, 'danger');
+    setLoading(false);
+  }
+}
+ 
 // ══════════════════════════════════════════════
 //  FILTER + SORT + RENDER
 // ══════════════════════════════════════════════
@@ -687,17 +755,17 @@ function getFiltered() {
   const q      = document.getElementById('search-input').value.toLowerCase();
   const status = document.getElementById('filter-status').value;
   const sort   = document.getElementById('sort-by').value;
-
+ 
   let list = products.filter(p => {
     const matchCat  = currentCat === 'Semua' || p.kategori === currentCat;
-    const matchQ    = p.nama.toLowerCase().includes(q) || p.game.toLowerCase().includes(q);
+    const matchQ    = (p.nama||'').toLowerCase().includes(q) || (p.game||'').toLowerCase().includes(q);
     const matchStat = !status || p.status === status;
     return matchCat && matchQ && matchStat;
   });
-
+ 
   list.sort((a,b) => {
-    if (sort === 'nama-asc')    return a.nama.localeCompare(b.nama);
-    if (sort === 'nama-desc')   return b.nama.localeCompare(a.nama);
+    if (sort === 'nama-asc')    return (a.nama||'').localeCompare(b.nama||'');
+    if (sort === 'nama-desc')   return (b.nama||'').localeCompare(a.nama||'');
     if (sort === 'harga-asc')   return a.jual - b.jual;
     if (sort === 'harga-desc')  return b.jual - a.jual;
     if (sort === 'profit-desc') return (b.jual-b.modal) - (a.jual-a.modal);
@@ -705,18 +773,19 @@ function getFiltered() {
   });
   return list;
 }
-
+ 
 function render() {
+  if (isLoading) return;
   updateStats();
   const list  = getFiltered();
   const total = list.length;
   const pages = Math.max(1, Math.ceil(total / perPage));
   if (currentPage > pages) currentPage = pages;
-
+ 
   const slice = list.slice((currentPage-1)*perPage, currentPage*perPage);
   const tbody = document.getElementById('prod-tbody');
   tbody.innerHTML = '';
-
+ 
   if (slice.length === 0) {
     document.getElementById('empty-state').style.display = 'block';
     document.getElementById('prod-table').style.display  = 'none';
@@ -734,12 +803,12 @@ function render() {
           <div style="display:flex;align-items:center;gap:10px;">
             <div class="prod-icon-sm" style="background:rgba(79,70,229,.1);">${p.ikon||'📦'}</div>
             <div>
-              <div style="font-weight:500;font-size:13.5px;">${p.nama}</div>
-              <div style="font-size:11.5px;color:var(--text3);">${p.game}</div>
+              <div style="font-weight:500;font-size:13.5px;">${p.nama||''}</div>
+              <div style="font-size:11.5px;color:var(--text3);">${p.game||''}</div>
             </div>
           </div>
         </td>
-        <td><span class="badge info">${p.kategori}</span></td>
+        <td><span class="badge info">${p.kategori||''}</span></td>
         <td style="color:var(--text2);">${fmt(p.modal)}</td>
         <td style="font-weight:600;color:var(--gold);">${fmt(p.jual)}</td>
         <td>
@@ -747,7 +816,7 @@ function render() {
           <div style="font-size:11px;color:var(--text3);">${pct}%</div>
         </td>
         <td>${statusBadge(p.status)}</td>
-        <td style="color:var(--text3);font-size:12px;">${p.tanggal}</td>
+        <td style="color:var(--text3);font-size:12px;">${p.tanggal||'-'}</td>
         <td>
           <div style="display:flex;gap:6px;justify-content:center;">
             <button class="btn btn-outline btn-xs btn-icon" title="Detail" onclick="openDetail(${p.id})"><i class="fa-solid fa-eye"></i></button>
@@ -758,26 +827,23 @@ function render() {
       tbody.appendChild(row);
     });
   }
-
-  // pagination
+ 
   renderPagination(total, pages);
   document.getElementById('pagination-info').textContent =
     total === 0 ? 'Tidak ada produk' :
     `Menampilkan ${(currentPage-1)*perPage+1}–${Math.min(currentPage*perPage,total)} dari ${total} produk`;
-
-  // selected info
+ 
   const selCount = selectedIds.size;
   document.getElementById('selected-info').style.display = selCount ? 'inline' : 'none';
   document.getElementById('bulk-delete-btn').style.display = selCount ? 'inline-flex' : 'none';
   if (selCount) document.getElementById('selected-info').textContent = `${selCount} dipilih`;
   document.getElementById('select-all').checked = slice.length > 0 && slice.every(p => selectedIds.has(p.id));
 }
-
+ 
 function renderPagination(total, pages) {
   const pg = document.getElementById('pagination');
   pg.innerHTML = '';
   if (pages <= 1) return;
-
   const mkBtn = (label, page, disabled, active) => {
     const b = document.createElement('button');
     b.className = 'page-btn' + (active?' active':'');
@@ -786,34 +852,33 @@ function renderPagination(total, pages) {
     if (!disabled && !active) b.onclick = () => { currentPage = page; render(); };
     pg.appendChild(b);
   };
-
   mkBtn('<i class="fa-solid fa-chevron-left" style="font-size:11px;"></i>', currentPage-1, currentPage===1, false);
   for (let i=1;i<=pages;i++) {
     if (pages > 7 && i > 2 && i < pages-1 && Math.abs(i-currentPage) > 1) {
-      if (i === 3 || i === pages-2) { const d=document.createElement('span'); d.textContent='…'; d.style.cssText='padding:0 4px;color:var(--text3);'; pg.appendChild(d); }
+      if (i===3||i===pages-2) { const d=document.createElement('span'); d.textContent='…'; d.style.cssText='padding:0 4px;color:var(--text3);'; pg.appendChild(d); }
       continue;
     }
     mkBtn(i, i, false, i===currentPage);
   }
   mkBtn('<i class="fa-solid fa-chevron-right" style="font-size:11px;"></i>', currentPage+1, currentPage===pages, false);
 }
-
+ 
 function updateStats() {
   document.getElementById('stat-total').textContent    = products.length;
   document.getElementById('stat-aktif').textContent    = products.filter(p=>p.status==='Aktif').length;
   document.getElementById('stat-habis').textContent    = products.filter(p=>p.status==='Stok Habis').length;
   document.getElementById('stat-nonaktif').textContent = products.filter(p=>p.status==='Nonaktif').length;
 }
-
+ 
 function statusBadge(s) {
   const map = { Aktif:'success', 'Stok Habis':'danger', Nonaktif:'gray', Promo:'warning' };
   return `<span class="badge ${map[s]||'gray'}">${s}</span>`;
 }
-
+ 
 function fmt(n) {
-  return 'Rp ' + Number(n).toLocaleString('id-ID');
+  return 'Rp ' + Number(n||0).toLocaleString('id-ID');
 }
-
+ 
 // ══════════════════════════════════════════════
 //  CATEGORY TABS
 // ══════════════════════════════════════════════
@@ -828,14 +893,14 @@ document.getElementById('cat-tabs').addEventListener('click', e => {
     currentCat === 'Semua' ? 'Semua Produk' : currentCat;
   render();
 });
-
+ 
 // ══════════════════════════════════════════════
-//  SEARCH / FILTER LISTENERS
+//  SEARCH / FILTER
 // ══════════════════════════════════════════════
 document.getElementById('search-input').addEventListener('input', () => { currentPage=1; render(); });
 document.getElementById('filter-status').addEventListener('change', () => { currentPage=1; render(); });
 document.getElementById('sort-by').addEventListener('change', () => render());
-
+ 
 function resetFilter() {
   document.getElementById('search-input').value = '';
   document.getElementById('filter-status').value = '';
@@ -846,27 +911,24 @@ function resetFilter() {
   currentPage = 1;
   render();
 }
-
+ 
 // ══════════════════════════════════════════════
 //  SELECT / BULK
 // ══════════════════════════════════════════════
 function toggleSelect(id, cb) {
-  if (cb.checked) selectedIds.add(id);
-  else selectedIds.delete(id);
+  if (cb.checked) selectedIds.add(id); else selectedIds.delete(id);
   render();
 }
-
 function toggleSelectAll(cb) {
   const visible = getFiltered().slice((currentPage-1)*perPage, currentPage*perPage);
   visible.forEach(p => cb.checked ? selectedIds.add(p.id) : selectedIds.delete(p.id));
   render();
 }
-
 function bulkDelete() {
   const ids = [...selectedIds];
   confirmDelete(ids, `${ids.length} produk`);
 }
-
+ 
 // ══════════════════════════════════════════════
 //  MODAL: ADD / EDIT
 // ══════════════════════════════════════════════
@@ -881,72 +943,82 @@ function openAddModal() {
   document.getElementById('margin-preview').style.display = 'none';
   openModal('modal-produk');
 }
-
+ 
 function openEditModal(id) {
   const p = products.find(x=>x.id===id);
   if (!p) return;
   document.getElementById('edit-id').value = id;
   document.getElementById('modal-title').textContent = 'Edit Produk';
   document.getElementById('save-btn').innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Update Produk';
-  document.getElementById('f-nama').value = p.nama;
-  document.getElementById('f-kategori').value = p.kategori;
-  document.getElementById('f-game').value = p.game;
-  document.getElementById('f-modal').value = p.modal;
-  document.getElementById('f-jual').value = p.jual;
-  document.getElementById('f-icon').value = p.ikon;
-  document.getElementById('f-status').value = p.status;
-  document.getElementById('f-desc').value = p.desc || '';
+  document.getElementById('f-nama').value     = p.nama || '';
+  document.getElementById('f-kategori').value = p.kategori || '';
+  document.getElementById('f-game').value     = p.game || '';
+  document.getElementById('f-modal').value    = p.modal || 0;
+  document.getElementById('f-jual').value     = p.jual || 0;
+  document.getElementById('f-icon').value     = p.ikon || '';
+  document.getElementById('f-status').value   = p.status || 'Aktif';
+  document.getElementById('f-desc').value     = p.deskripsi || '';
   hitungMargin();
   openModal('modal-produk');
 }
-
-function saveProduk() {
-  const nama     = document.getElementById('f-nama').value.trim();
-  const kategori = document.getElementById('f-kategori').value;
-  const game     = document.getElementById('f-game').value.trim() || '-';
-  const modal    = parseInt(document.getElementById('f-modal').value) || 0;
-  const jual     = parseInt(document.getElementById('f-jual').value) || 0;
-  const ikon     = document.getElementById('f-icon').value.trim() || '📦';
-  const status   = document.getElementById('f-status').value;
-  const desc     = document.getElementById('f-desc').value.trim();
-
+ 
+async function saveProduk() {
+  const nama      = document.getElementById('f-nama').value.trim();
+  const kategori  = document.getElementById('f-kategori').value;
+  const game      = document.getElementById('f-game').value.trim() || '-';
+  const modal     = parseInt(document.getElementById('f-modal').value) || 0;
+  const jual      = parseInt(document.getElementById('f-jual').value) || 0;
+  const ikon      = document.getElementById('f-icon').value.trim() || '📦';
+  const status    = document.getElementById('f-status').value;
+  const deskripsi = document.getElementById('f-desc').value.trim();
+ 
   if (!nama)     { toast('Nama produk wajib diisi!','danger'); return; }
   if (!kategori) { toast('Pilih kategori produk!','danger'); return; }
   if (jual <= 0) { toast('Harga jual harus lebih dari 0!','danger'); return; }
-
+ 
   const today = new Date().toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
   const editId = parseInt(document.getElementById('edit-id').value);
-
-  if (editId) {
-    const idx = products.findIndex(p=>p.id===editId);
-    if (idx > -1) {
-      products[idx] = {...products[idx], nama, kategori, game, modal, jual, ikon, status, desc};
-      toast('Produk berhasil diupdate!','success');
+ 
+  const btn = document.getElementById('save-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...';
+ 
+  try {
+    if (editId) {
+      await sbUpdate(editId, { nama, kategori, game, modal, jual, ikon, status, deskripsi });
+      const idx = products.findIndex(p=>p.id===editId);
+      if (idx > -1) products[idx] = { ...products[idx], nama, kategori, game, modal, jual, ikon, status, deskripsi };
+      toast('✅ Produk berhasil diupdate dan tersimpan di database!', 'success');
+    } else {
+      const inserted = await sbInsert({ nama, kategori, game, modal, jual, ikon, status, deskripsi, tanggal:today });
+      products.push(inserted[0]);
+      toast('✅ Produk berhasil ditambahkan ke database!', 'success');
     }
-  } else {
-    products.push({ id:nextId++, nama, kategori, game, modal, jual, ikon, status, desc, tanggal:today });
-    toast('Produk berhasil ditambahkan!','success');
+    closeModal('modal-produk');
+    render();
+  } catch(e) {
+    toast('❌ Gagal menyimpan: ' + e.message, 'danger');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Simpan Produk';
   }
-
-  closeModal('modal-produk');
-  render();
 }
-
+ 
 function hitungMargin() {
   const modal = parseInt(document.getElementById('f-modal').value) || 0;
   const jual  = parseInt(document.getElementById('f-jual').value)  || 0;
   if (modal > 0 && jual > 0) {
     const margin = jual - modal;
     const pct    = ((margin/modal)*100).toFixed(1);
-    document.getElementById('margin-rp').textContent  = fmt(margin);
-    document.getElementById('margin-rp').style.color  = margin >= 0 ? 'var(--green)' : 'var(--red)';
+    document.getElementById('margin-rp').textContent = fmt(margin);
+    document.getElementById('margin-rp').style.color = margin >= 0 ? 'var(--green)' : 'var(--red)';
     document.getElementById('margin-pct').textContent = `(${pct}%)`;
     document.getElementById('margin-preview').style.display = 'block';
   } else {
     document.getElementById('margin-preview').style.display = 'none';
   }
 }
-
+ 
 // ══════════════════════════════════════════════
 //  MODAL: DETAIL
 // ══════════════════════════════════════════════
@@ -981,64 +1053,77 @@ function openDetail(id) {
         <div style="font-weight:500;">${p.kategori}</div>
       </div>
     </div>
-    ${p.desc ? `<div style="background:var(--bg-card2);border-radius:var(--radius-sm);padding:12px;font-size:13px;color:var(--text2);line-height:1.6;">${p.desc}</div>` : ''}
-    <div style="margin-top:12px;font-size:12px;color:var(--text3);">Ditambahkan: ${p.tanggal} · ID: #${p.id}</div>`;
-
-  document.getElementById('detail-edit-btn').onclick = () => {
-    closeModal('modal-detail');
-    openEditModal(id);
-  };
+    ${p.deskripsi ? `<div style="background:var(--bg-card2);border-radius:var(--radius-sm);padding:12px;font-size:13px;color:var(--text2);line-height:1.6;">${p.deskripsi}</div>` : ''}
+    <div style="margin-top:12px;font-size:12px;color:var(--text3);">Ditambahkan: ${p.tanggal||'-'} · ID: #${p.id}</div>`;
+  document.getElementById('detail-edit-btn').onclick = () => { closeModal('modal-detail'); openEditModal(id); };
   openModal('modal-detail');
 }
-
+ 
 // ══════════════════════════════════════════════
 //  DELETE
 // ══════════════════════════════════════════════
 function confirmDelete(ids, label) {
   pendingDeleteIds = ids;
   document.getElementById('confirm-title').textContent = `Hapus ${label}?`;
-  document.getElementById('confirm-desc').textContent  =
-    `${label} yang dihapus tidak dapat dikembalikan. Apakah Anda yakin?`;
+  document.getElementById('confirm-desc').textContent  = `${label} akan dihapus permanen dari database. Apakah Anda yakin?`;
   document.getElementById('confirm-ok-btn').onclick = doDelete;
   openModal('modal-confirm');
 }
-
-function doDelete() {
+ 
+async function doDelete() {
   const count = pendingDeleteIds.length;
-  products = products.filter(p => !pendingDeleteIds.includes(p.id));
-  pendingDeleteIds.forEach(id => selectedIds.delete(id));
-  closeModal('modal-confirm');
-  toast(`${count} produk berhasil dihapus.`, 'danger');
-  render();
+  const btn = document.getElementById('confirm-ok-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menghapus...';
+  try {
+    await sbDelete(pendingDeleteIds);
+    products = products.filter(p => !pendingDeleteIds.includes(p.id));
+    pendingDeleteIds.forEach(id => selectedIds.delete(id));
+    closeModal('modal-confirm');
+    toast(`🗑️ ${count} produk berhasil dihapus dari database.`, 'danger');
+    render();
+  } catch(e) {
+    toast('❌ Gagal menghapus: ' + e.message, 'danger');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-trash"></i> Ya, Hapus';
+  }
 }
-
+ 
 // ══════════════════════════════════════════════
 //  IMPORT CSV
 // ══════════════════════════════════════════════
 function openImport() { openModal('modal-import'); }
-
-function importCSV(input) {
+ 
+async function importCSV(input) {
   const file = input.files[0];
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = e => {
-    const lines = e.target.result.trim().split('\n').slice(1); // skip header
+  reader.onload = async e => {
+    const lines = e.target.result.trim().split('\n').slice(1);
     let count = 0;
     const today = new Date().toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+    const rows = [];
     lines.forEach(line => {
       const [nama,kategori,game,modal,jual,ikon,status] = line.split(',').map(s=>s.trim());
       if (!nama || !kategori) return;
-      products.push({ id:nextId++, nama, kategori, game:game||'-', modal:parseInt(modal)||0, jual:parseInt(jual)||0, ikon:ikon||'📦', status:status||'Aktif', desc:'', tanggal:today });
+      rows.push({ nama, kategori, game:game||'-', modal:parseInt(modal)||0, jual:parseInt(jual)||0, ikon:ikon||'📦', status:status||'Aktif', deskripsi:'', tanggal:today });
       count++;
     });
-    closeModal('modal-import');
-    render();
-    toast(`${count} produk berhasil diimport!`, 'success');
+    try {
+      const inserted = await sbInsert(rows);
+      products.push(...inserted);
+      closeModal('modal-import');
+      render();
+      toast(`✅ ${count} produk berhasil diimport ke database!`, 'success');
+    } catch(e) {
+      toast('❌ Gagal import: ' + e.message, 'danger');
+    }
   };
   reader.readAsText(file);
   input.value = '';
 }
-
+ 
 function downloadTemplate() {
   const csv = 'nama,kategori,game,modal,jual,ikon,status\nMLBB Diamond 500,Top Up Diamond,Mobile Legends,90000,115000,💎,Aktif';
   const a = document.createElement('a');
@@ -1047,40 +1132,33 @@ function downloadTemplate() {
   a.click();
   toast('Template berhasil didownload!','info');
 }
-
+ 
 // ══════════════════════════════════════════════
 //  MODAL HELPERS
 // ══════════════════════════════════════════════
-function openModal(id) {
-  document.getElementById(id).classList.add('open');
-}
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
-}
-// close on backdrop click
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
 });
-
+ 
 // ══════════════════════════════════════════════
 //  TOAST
 // ══════════════════════════════════════════════
 function toast(msg, type='info') {
-  const icons = { success:'fa-circle-check', danger:'fa-circle-xmark', info:'fa-circle-info' };
+  const icons  = { success:'fa-circle-check', danger:'fa-circle-xmark', info:'fa-circle-info' };
   const colors = { success:'var(--green)', danger:'var(--red)', info:'var(--accent)' };
   const t = document.createElement('div');
   t.className = `toast ${type}`;
   t.innerHTML = `<i class="fa-solid ${icons[type]||'fa-circle-info'}" style="color:${colors[type]||colors.info};font-size:16px;"></i> ${msg}`;
   document.getElementById('toast-wrap').appendChild(t);
-  setTimeout(() => t.remove(), 3500);
+  setTimeout(() => t.remove(), 4000);
 }
-
+ 
 // ══════════════════════════════════════════════
-//  INIT
+//  INIT — LOAD FROM SUPABASE
 // ══════════════════════════════════════════════
-render();
+loadProducts();
 </script>
 </body>
 </html>
