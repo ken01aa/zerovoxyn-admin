@@ -195,7 +195,7 @@
   .bar-lbl { font-size:10px; color:var(--text3); }
 
   /* donut */
-  .donut-wrap { position:relative; width:110px; height:110px; margin:0 auto 16px; }
+  .donut-wrap { position:relative; width:130px; height:130px; margin:0 auto 16px; }
   svg.donut { transform:rotate(-90deg); }
   .donut-center {
     position:absolute; inset:0; display:flex; flex-direction:column;
@@ -384,6 +384,7 @@
   ::-webkit-scrollbar-track { background:transparent; }
   ::-webkit-scrollbar-thumb { background:#C4BBE8; border-radius:4px; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="shell">
@@ -503,7 +504,7 @@
             <span class="chip">Bulanan</span>
           </div>
         </div>
-        <div class="bar-chart" id="main-barchart"></div>
+        <div style="position:relative;height:150px;"><canvas id="main-barchart"></canvas></div>
         <div style="display:flex;gap:16px;margin-top:12px;">
           <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2);">
             <div style="width:10px;height:10px;border-radius:2px;background:var(--accent);"></div> Voucher Game
@@ -522,15 +523,7 @@
           </div>
         </div>
         <div class="donut-wrap">
-          <svg class="donut" width="110" height="110" viewBox="0 0 110 110">
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#E2E6EE" stroke-width="14"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#6C5CE7" stroke-width="14"
-              stroke-dasharray="125.6 125.6" stroke-dashoffset="0"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#F59E0B" stroke-width="14"
-              stroke-dasharray="75.4 175.8" stroke-dashoffset="-125.6"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#10B981" stroke-width="14"
-              stroke-dasharray="50.3 200.9" stroke-dashoffset="-201"/>
-          </svg>
+          <canvas id="donut-chart" width="130" height="130"></canvas>
           <div class="donut-center">
             <div class="donut-pct" style="color:var(--accent);">100%</div>
             <div class="donut-lbl">Total</div>
@@ -1205,7 +1198,7 @@
         <div style="font-size:12px;color:var(--text2);margin-top:4px;">± 124 transaksi / hari</div>
         <hr class="divider">
         <div style="font-size:12px;color:var(--text2);margin-bottom:8px;">Jam Puncak Transaksi</div>
-        <div class="bar-chart" id="hour-chart" style="height:60px;"></div>
+        <div style="position:relative;height:60px;"><canvas id="hour-chart"></canvas></div>
       </div>
     </div>
 
@@ -1218,7 +1211,7 @@
             <span class="chip">Transaksi</span>
           </div>
         </div>
-        <div class="bar-chart" id="monthly-chart" style="height:140px;"></div>
+        <div style="position:relative;height:140px;"><canvas id="monthly-chart"></canvas></div>
       </div>
       <div class="card">
         <div class="card-title" style="margin-bottom:14px;">Metode Pembayaran</div>
@@ -1418,51 +1411,273 @@
     // render charts if navigating to laporan
     if (id === 'laporan') {
       setTimeout(() => {
-        buildBars('hour-chart', hours, hourLabels);
-        buildBars('monthly-chart', monthDays, monthLabels);
-      }, 50);
+        buildHourChart();
+        buildMonthlyChart();
+      }, 80);
     }
   }
 
-  // Bar Chart Builder
-  function buildBars(containerId, data, colors) {
-    const c = document.getElementById(containerId);
-    if (!c) return;
-    c.innerHTML = '';
-    const max = Math.max(...data.map(d => Math.max(...(Array.isArray(d) ? d : [d]))));
-    data.forEach((item, i) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'bar-wrap';
-      const vals = Array.isArray(item) ? item : [item];
-      const barsDiv = document.createElement('div');
-      barsDiv.style.cssText = 'display:flex;gap:2px;align-items:flex-end;flex:1;width:100%;';
-      vals.forEach((v, ci) => {
-        const bar = document.createElement('div');
-        bar.className = 'bar' + (ci === 1 ? ' gold' : '');
-        bar.style.height = Math.round((v / max) * 100) + '%';
-        bar.style.flex = '1';
-        barsDiv.appendChild(bar);
-      });
-      wrap.appendChild(barsDiv);
-      const lbl = document.createElement('div');
-      lbl.className = 'bar-lbl';
-      lbl.textContent = colors[i] || '';
-      wrap.appendChild(lbl);
-      c.appendChild(wrap);
+  // ── CHART.JS SETUP ──
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+  Chart.defaults.color = '#9B8FC0';
+
+  const chartInstances = {};
+
+  function destroyChart(id) {
+    if (chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; }
+  }
+
+  // ── 1. GRAFIK PENJUALAN HARIAN (Bar grouped) ──
+  const days = ['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
+  const dayVoucher  = [120,180,95,220,190,310,270];
+  const dayDiamond  = [80,120,60,150,130,200,180];
+
+  function buildMainChart() {
+    destroyChart('main-barchart');
+    const ctx = document.getElementById('main-barchart');
+    if (!ctx) return;
+    chartInstances['main-barchart'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: days,
+        datasets: [
+          {
+            label: 'Voucher Game',
+            data: dayVoucher,
+            backgroundColor: 'rgba(109,40,217,0.85)',
+            borderRadius: 6,
+            borderSkipped: false,
+          },
+          {
+            label: 'Top Up Diamond',
+            data: dayDiamond,
+            backgroundColor: 'rgba(217,119,6,0.85)',
+            borderRadius: 6,
+            borderSkipped: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          duration: 900,
+          easing: 'easeOutQuart',
+          delay: (ctx) => ctx.dataIndex * 60,
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1A1033',
+            titleColor: '#fff',
+            bodyColor: '#C4BBE8',
+            padding: 10,
+            cornerRadius: 8,
+            callbacks: {
+              label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y} trx`
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            border: { display: false },
+            ticks: { font: { size: 11 } }
+          },
+          y: {
+            grid: { color: 'rgba(196,187,232,0.2)', drawBorder: false },
+            border: { display: false, dash: [4,4] },
+            ticks: { font: { size: 11 }, maxTicksLimit: 5 }
+          }
+        }
+      }
     });
   }
 
-  const days = ['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
-  const dayData = [[120,80],[180,120],[95,60],[220,150],[190,130],[310,200],[270,180]];
-  buildBars('main-barchart', dayData, days);
+  // ── 2. DONUT CHART KATEGORI ──
+  function buildDonutChart() {
+    destroyChart('donut-chart');
+    const ctx = document.getElementById('donut-chart');
+    if (!ctx) return;
+    chartInstances['donut-chart'] = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Voucher Game','Top Up Diamond','Kartu Kredit'],
+        datasets: [{
+          data: [50, 30, 20],
+          backgroundColor: ['#6D28D9','#D97706','#059669'],
+          borderWidth: 3,
+          borderColor: '#FFFFFF',
+          hoverOffset: 6,
+        }]
+      },
+      options: {
+        responsive: false,
+        cutout: '68%',
+        animation: {
+          animateRotate: true,
+          duration: 1000,
+          easing: 'easeOutQuart',
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1A1033',
+            titleColor: '#fff',
+            bodyColor: '#C4BBE8',
+            padding: 10,
+            cornerRadius: 8,
+            callbacks: {
+              label: (ctx) => ` ${ctx.label}: ${ctx.parsed}%`
+            }
+          }
+        }
+      }
+    });
+  }
 
-  const hours = [10,5,4,3,8,12,18,25,22,20,30,35,40,38,35,30,28,25,40,45,38,30,22,15];
-  const hourLabels = hours.map((_,i)=>i%6===0?i+'h':'');
-  buildBars('hour-chart', hours, hourLabels);
+  // ── 3. GRAFIK JAM PUNCAK (sparkline bar) ──
+  function buildHourChart() {
+    destroyChart('hour-chart');
+    const ctx = document.getElementById('hour-chart');
+    if (!ctx) return;
+    const hours = [10,5,4,3,8,12,18,25,22,20,30,35,40,38,35,30,28,25,40,45,38,30,22,15];
+    const hLabels = hours.map((_,i)=>i%6===0?i+'h':'');
+    chartInstances['hour-chart'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: hLabels,
+        datasets: [{
+          data: hours,
+          backgroundColor: hours.map(v => v >= 35 ? 'rgba(109,40,217,0.9)' : 'rgba(196,187,232,0.6)'),
+          borderRadius: 3,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 800, easing: 'easeOutQuart', delay: (c)=>c.dataIndex*20 },
+        plugins: { legend:{display:false}, tooltip:{
+          backgroundColor:'#1A1033', titleColor:'#fff', bodyColor:'#C4BBE8',
+          padding:8, cornerRadius:8,
+          callbacks:{ label:(c)=>` ${c.parsed.y} trx` }
+        }},
+        scales: {
+          x:{ grid:{display:false}, border:{display:false}, ticks:{font:{size:9}} },
+          y:{ display:false }
+        }
+      }
+    });
+  }
 
-  const monthDays = Array.from({length:25},()=>Math.round(Math.random()*80+40));
-  const monthLabels = monthDays.map((_,i)=>(i+1)%5===0?(i+1)+'':'');
-  buildBars('monthly-chart', monthDays, monthLabels);
+  // ── 4. GRAFIK TREND 30 HARI (Area line) ──
+  function buildMonthlyChart() {
+    destroyChart('monthly-chart');
+    const ctx = document.getElementById('monthly-chart');
+    if (!ctx) return;
+    const monthDays = Array.from({length:30},(_,i)=>Math.round(Math.sin(i/4)*40+Math.random()*30+80));
+    const mLabels = monthDays.map((_,i)=>(i+1)%5===0?(i+1)+'':'');
+    chartInstances['monthly-chart'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: mLabels,
+        datasets: [{
+          label: 'Omzet',
+          data: monthDays,
+          borderColor: '#6D28D9',
+          borderWidth: 2.5,
+          tension: 0.4,
+          fill: true,
+          backgroundColor: (ctx) => {
+            const chart = ctx.chart;
+            const {ctx:c, chartArea} = chart;
+            if (!chartArea) return 'transparent';
+            const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+            gradient.addColorStop(0, 'rgba(109,40,217,0.25)');
+            gradient.addColorStop(1, 'rgba(109,40,217,0.01)');
+            return gradient;
+          },
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#6D28D9',
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          duration: 1200,
+          easing: 'easeOutQuart',
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1A1033',
+            titleColor: '#fff',
+            bodyColor: '#C4BBE8',
+            padding: 10,
+            cornerRadius: 8,
+            mode: 'index',
+            intersect: false,
+            callbacks:{ label:(c)=>` Rp ${(c.parsed.y * 950000).toLocaleString('id-ID')}` }
+          }
+        },
+        scales: {
+          x:{ grid:{display:false}, border:{display:false}, ticks:{font:{size:10}, maxTicksLimit:8} },
+          y:{ grid:{color:'rgba(196,187,232,0.2)'}, border:{display:false, dash:[4,4]}, ticks:{font:{size:10}, maxTicksLimit:5} }
+        },
+        interaction: { mode:'index', intersect:false }
+      }
+    });
+  }
+
+  // ── INIT ALL CHARTS ──
+  window.addEventListener('load', () => {
+    buildMainChart();
+    buildDonutChart();
+  });
+
+  // ── CHIP TOGGLE for main chart ──
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      const parent = this.closest('.card-head').parentElement;
+      if (!parent) return;
+      parent.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      // regenerate with slightly different data for weekly/monthly
+      const isMonthly = this.textContent.trim() === 'Bulanan';
+      if (isMonthly) {
+        destroyChart('main-barchart');
+        const ctx = document.getElementById('main-barchart');
+        if (!ctx) return;
+        const mLabels = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+        chartInstances['main-barchart'] = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: mLabels,
+            datasets: [
+              { label:'Voucher Game', data:[820,950,780,1100,1320,980,1050,1200,890,1400,1150,1380], backgroundColor:'rgba(109,40,217,0.85)', borderRadius:6, borderSkipped:false },
+              { label:'Top Up Diamond', data:[540,620,490,780,920,650,710,840,600,980,760,910], backgroundColor:'rgba(217,119,6,0.85)', borderRadius:6, borderSkipped:false }
+            ]
+          },
+          options: {
+            responsive:true, maintainAspectRatio:false,
+            animation:{ duration:900, easing:'easeOutQuart', delay:(c)=>c.dataIndex*40 },
+            plugins:{ legend:{display:false}, tooltip:{backgroundColor:'#1A1033',titleColor:'#fff',bodyColor:'#C4BBE8',padding:10,cornerRadius:8} },
+            scales:{
+              x:{grid:{display:false},border:{display:false},ticks:{font:{size:10}}},
+              y:{grid:{color:'rgba(196,187,232,0.2)'},border:{display:false,dash:[4,4]},ticks:{font:{size:10},maxTicksLimit:5}}
+            }
+          }
+        });
+      } else {
+        buildMainChart();
+      }
+    });
+  });
 
   // Payment toggle
   function toggleChannel(toggleEl, cardId) {
