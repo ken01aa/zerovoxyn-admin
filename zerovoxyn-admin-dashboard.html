@@ -34,10 +34,10 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html, body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg-deep); color:var(--text); font-size:14px; }
-
+ 
   /* ── LAYOUT ── */
   .shell { display:flex; height:100vh; overflow:hidden; }
-
+ 
   /* ── SIDEBAR ── */
   .sidebar {
     width:var(--sidebar); min-width:var(--sidebar);
@@ -50,7 +50,7 @@
   }
   .sidebar::-webkit-scrollbar { width:3px; }
   .sidebar::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
-
+ 
   .brand {
     padding:20px 18px 16px;
     border-bottom:1px solid var(--border);
@@ -64,7 +64,7 @@
   }
   .brand-name { font-family:'Syne',sans-serif; font-weight:800; font-size:15px; letter-spacing:.5px; }
   .brand-sub { font-size:10px; color:var(--text3); letter-spacing:1.5px; text-transform:uppercase; margin-top:1px; }
-
+ 
   .nav-section { padding:10px 0; }
   .nav-label {
     font-size:10px; color:var(--text3); letter-spacing:1.5px; text-transform:uppercase;
@@ -88,7 +88,7 @@
     font-size:10px; padding:1px 6px; border-radius:20px; font-weight:600;
   }
   .nav-badge.green { background:var(--green); }
-
+ 
   .sidebar-footer {
     margin-top:auto; padding:14px 18px;
     border-top:1px solid var(--border);
@@ -102,12 +102,12 @@
   }
   .user-name { font-size:13px; font-weight:500; }
   .user-role { font-size:11px; color:var(--text3); }
-
+ 
   /* ── MAIN ── */
   .main { flex:1; overflow-y:auto; background:var(--bg-deep); }
   .main::-webkit-scrollbar { width:4px; }
   .main::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
-
+ 
   /* ── TOP BAR ── */
   .topbar {
     position:sticky; top:0; z-index:50;
@@ -130,11 +130,11 @@
     width:6px; height:6px; background:var(--red); border-radius:50%;
   }
   .topbar-date { font-size:12px; color:var(--text3); }
-
+ 
   /* ── PAGE SECTIONS ── */
   .section { display:none; padding:24px 28px 40px; }
   .section.active { display:block; }
-
+ 
   /* ── STAT CARDS ── */
   .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:24px; }
   .stat-card {
@@ -165,7 +165,7 @@
     position:absolute; right:16px; top:16px;
     font-size:22px; opacity:.18;
   }
-
+ 
   /* ── CHARTS ROW ── */
   .charts-row { display:grid; grid-template-columns:2fr 1fr; gap:14px; margin-bottom:24px; }
   .card {
@@ -180,7 +180,7 @@
     border:1px solid var(--border2); color:var(--text2); cursor:pointer;
   }
   .chip.active { background:var(--accent); border-color:var(--accent); color:#fff; }
-
+ 
   /* bar chart */
   .bar-chart { display:flex; align-items:flex-end; gap:6px; height:120px; }
   .bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; }
@@ -191,7 +191,7 @@
   }
   .bar.gold { background:var(--gold); }
   .bar-lbl { font-size:10px; color:var(--text3); }
-
+ 
   /* donut */
   .donut-wrap { position:relative; width:110px; height:110px; margin:0 auto 16px; }
   svg.donut { transform:rotate(-90deg); }
@@ -203,7 +203,7 @@
   .donut-lbl { font-size:10px; color:var(--text2); }
   .legend-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:12.5px; }
   .legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-
+ 
   /* ── TABLE ── */
   .table-wrap { overflow-x:auto; }
   table { width:100%; border-collapse:collapse; }
@@ -227,7 +227,7 @@
   .badge.warning { background:rgba(245,158,11,.15); color:var(--gold); }
   .badge.info { background:rgba(108,92,231,.15); color:var(--accent); }
   .badge.cyan { background:rgba(34,211,238,.15); color:var(--accent3); }
-
+ 
   /* ── NOTIF ── */
   .notif-list { display:flex; flex-direction:column; gap:8px; }
   .notif-item {
@@ -245,7 +245,7 @@
   .notif-ico.gold { background:rgba(245,158,11,.15); color:var(--gold); }
   .notif-ico.accent { background:var(--accent-glow); color:var(--accent); }
   .notif-time { font-size:11px; color:var(--text3); margin-top:2px; }
-
+ 
   /* ── PRODUCT GRID ── */
   .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   .prod-card {
@@ -264,7 +264,7 @@
   .prod-foot { display:flex; align-items:center; justify-content:space-between; }
   .prod-price { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; color:var(--gold); }
   .prod-stock { font-size:11px; color:var(--text2); }
-
+ 
   /* ── FORM ── */
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
   .form-group { display:flex; flex-direction:column; gap:6px; }
@@ -279,7 +279,7 @@
   input:focus, select:focus, textarea:focus { border-color:var(--accent); }
   textarea { resize:vertical; min-height:80px; }
   select option { background:var(--bg-card2); }
-
+ 
   /* ── BUTTONS ── */
   .btn {
     padding:9px 20px; border-radius:var(--radius-sm); border:none;
@@ -296,7 +296,7 @@
   .btn-danger { background:rgba(239,68,68,.15); color:var(--red); }
   .btn-danger:hover { background:rgba(239,68,68,.25); }
   .btn-sm { padding:6px 14px; font-size:12px; }
-
+ 
   /* ── SALDO / WITHDRAW ── */
   .balance-hero {
     background:linear-gradient(135deg,#4F46E5 0%,#7C3AED 100%);
@@ -310,7 +310,7 @@
   }
   .balance-hero-lbl { font-size:12px; opacity:.75; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
   .balance-hero-val { font-family:'Syne',sans-serif; font-size:38px; font-weight:800; }
-
+ 
   /* ── PAYMENT CHANNELS ── */
   .channel-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
   .channel-card {
@@ -333,20 +333,20 @@
     width:16px; height:16px; background:#fff; border-radius:50%; transition:transform .15s;
   }
   .ch-toggle.on::after { transform:translateX(16px); }
-
+ 
   /* ── SETTINGS ── */
   .settings-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   .setting-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
   .setting-title { font-family:'Syne',sans-serif; font-size:14px; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
   .setting-title i { color:var(--accent); }
-
+ 
   /* ── STATS PAGE ── */
   .stats-big { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
   .mini-bar { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
   .mini-bar-fill { height:6px; border-radius:3px; background:var(--accent); }
   .mini-bar-lbl { font-size:12px; color:var(--text2); min-width:60px; }
   .mini-bar-val { font-size:12px; color:var(--text); margin-left:auto; }
-
+ 
   /* ── ACCOUNT ── */
   .account-hero {
     display:flex; align-items:center; gap:20px;
@@ -359,24 +359,24 @@
     display:flex; align-items:center; justify-content:center;
     font-size:26px; font-weight:800; color:#fff; flex-shrink:0;
   }
-
+ 
   /* ── SECTION HEADER ── */
   .sec-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
   .sec-head-title { font-family:'Syne',sans-serif; font-size:16px; font-weight:700; }
   .divider { border:none; border-top:1px solid var(--border); margin:20px 0; }
-
+ 
   /* ── FILTER ROW ── */
   .filter-row { display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
   .search-input-wrap { position:relative; flex:1; min-width:200px; }
   .search-input-wrap i { position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:13px; }
   .search-input { padding-left:32px !important; width:100%; }
-
+ 
   /* ── DOMAIN SECTION ── */
   .domain-card {
     background:var(--bg-card); border:1px solid var(--border);
     border-radius:var(--radius); padding:20px; margin-bottom:14px;
   }
-
+ 
   /* scrollbar */
   ::-webkit-scrollbar { width:4px; height:4px; }
   ::-webkit-scrollbar-track { background:transparent; }
@@ -385,7 +385,7 @@
 </head>
 <body>
 <div class="shell">
-
+ 
 <!-- SIDEBAR -->
 <nav class="sidebar">
   <div class="brand">
@@ -395,7 +395,7 @@
       <div class="brand-sub">Admin Master</div>
     </div>
   </div>
-
+ 
   <div class="nav-section">
     <div class="nav-label">Menu Utama</div>
     <div class="nav-item active" onclick="showSection('dashboard',this)">
@@ -412,7 +412,7 @@
       <i class="fa-solid fa-wallet"></i> Saldo & Withdraw
     </div>
   </div>
-
+ 
   <div class="nav-section">
     <div class="nav-label">Pengaturan</div>
     <div class="nav-item" onclick="showSection('website',this)">
@@ -428,7 +428,7 @@
       <i class="fa-solid fa-user-gear"></i> Manajemen Akun
     </div>
   </div>
-
+ 
   <div class="sidebar-footer">
     <div class="user-row">
       <div class="user-av">ZV</div>
@@ -439,10 +439,10 @@
     </div>
   </div>
 </nav>
-
+ 
 <!-- MAIN -->
 <div class="main">
-
+ 
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="page-title" id="page-title">Dashboard</div>
@@ -455,15 +455,15 @@
       <button class="topbar-btn" title="Pengaturan">
         <i class="fa-solid fa-gear" style="font-size:14px;"></i>
       </button>
-      <button class="topbar-btn" title="Logout" onclick="doLogout()" style="border-color:rgba(220,38,38,.3);color:#DC2626;" onmouseover="this.style.background='rgba(220,38,38,.08)'" onmouseout="this.style.background=''">
+      <button class="topbar-btn" title="Logout" onclick="showLogoutConfirm()" style="border-color:rgba(220,38,38,.3);color:#DC2626;" onmouseover="this.style.background='rgba(220,38,38,.08)'" onmouseout="this.style.background=''">
         <i class="fa-solid fa-right-from-bracket" style="font-size:14px;"></i>
       </button>
     </div>
   </div>
-
+ 
   <!-- ═══════════════ 1. DASHBOARD ═══════════════ -->
   <section class="section active" id="sec-dashboard">
-
+ 
     <!-- Stat Cards -->
     <div class="stat-grid">
       <div class="stat-card gold">
@@ -491,7 +491,7 @@
         <i class="fa-solid fa-money-bill-wave stat-icon" style="color:var(--accent3);"></i>
       </div>
     </div>
-
+ 
     <!-- Chart Row -->
     <div class="charts-row">
       <div class="card">
@@ -515,7 +515,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="card">
         <div class="card-head">
           <div>
@@ -557,7 +557,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Recent + Notif -->
     <div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;">
       <div class="card">
@@ -580,7 +580,7 @@
           </table>
         </div>
       </div>
-
+ 
       <div class="card">
         <div class="card-head"><div class="card-title">Notifikasi Penting</div><span class="badge danger">4 baru</span></div>
         <div class="notif-list">
@@ -620,8 +620,8 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 2. PRODUK ═══════════════ -->
   <section class="section" id="sec-produk">
     <div class="sec-head">
@@ -631,7 +631,7 @@
         <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah Produk</button>
       </div>
     </div>
-
+ 
     <div class="filter-row">
       <div class="search-input-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -640,7 +640,7 @@
       <select style="width:160px;"><option>Semua Kategori</option><option>Voucher Game</option><option>Top Up Diamond</option><option>Kartu Kredit</option></select>
       <select style="width:140px;"><option>Semua Status</option><option>Aktif</option><option>Nonaktif</option></select>
     </div>
-
+ 
     <div class="prod-grid">
       <!-- cards -->
       <div class="prod-card">
@@ -698,9 +698,9 @@
         </div>
       </div>
     </div>
-
+ 
     <hr class="divider">
-
+ 
     <div class="sec-head">
       <div class="sec-head-title">Tambah Produk Baru</div>
     </div>
@@ -733,15 +733,15 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 3. TRANSAKSI ═══════════════ -->
   <section class="section" id="sec-transaksi">
     <div class="sec-head">
       <div class="sec-head-title">Manajemen Transaksi</div>
       <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Export CSV</button>
     </div>
-
+ 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
       <div class="stat-card green">
         <div class="stat-label">Transaksi Sukses</div>
@@ -764,7 +764,7 @@
         <div class="stat-change up">bulan ini</div>
       </div>
     </div>
-
+ 
     <div class="filter-row">
       <div class="search-input-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -775,7 +775,7 @@
       <input type="date" style="width:150px;">
       <button class="btn btn-primary btn-sm"><i class="fa-solid fa-filter"></i> Filter</button>
     </div>
-
+ 
     <div class="card">
       <div class="table-wrap">
         <table>
@@ -858,14 +858,14 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 4. SALDO & WITHDRAW ═══════════════ -->
   <section class="section" id="sec-saldo">
     <div class="sec-head">
       <div class="sec-head-title">Saldo & Penarikan (Withdraw)</div>
     </div>
-
+ 
     <div class="balance-hero">
       <div class="balance-hero-lbl">Total Saldo UniPlay Cash</div>
       <div class="balance-hero-val">Rp 12.750.000</div>
@@ -879,7 +879,7 @@
         </button>
       </div>
     </div>
-
+ 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
       <div class="card">
         <div class="card-title" style="margin-bottom:14px;">Form Penarikan</div>
@@ -905,7 +905,7 @@
           <i class="fa-solid fa-arrow-right-from-bracket"></i> Ajukan Penarikan
         </button>
       </div>
-
+ 
       <div class="card">
         <div class="card-title" style="margin-bottom:14px;">Riwayat Withdraw</div>
         <table>
@@ -924,7 +924,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title" style="margin-bottom:14px;"><i class="fa-solid fa-shield-halved" style="color:var(--accent);margin-right:8px;"></i>Syarat & Ketentuan Withdraw</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
@@ -946,14 +946,14 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 5. WEBSITE & DOMAIN ═══════════════ -->
   <section class="section" id="sec-website">
     <div class="sec-head">
       <div class="sec-head-title">Pengaturan Website & Domain</div>
     </div>
-
+ 
     <div class="domain-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
@@ -972,7 +972,7 @@
         <button class="btn btn-outline btn-sm"><i class="fa-solid fa-plus"></i> Tambah Custom Domain</button>
       </div>
     </div>
-
+ 
     <div class="settings-grid">
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-palette"></i> Tampilan & Tema</div>
@@ -998,7 +998,7 @@
         </div>
         <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan Tema</button>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO & Branding</div>
         <div class="form-group" style="margin-bottom:12px;">
@@ -1015,7 +1015,7 @@
         </div>
         <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan SEO</button>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-store"></i> Info Toko</div>
         <div class="form-group" style="margin-bottom:12px;">
@@ -1032,7 +1032,7 @@
         </div>
         <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan Info</button>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-images"></i> Aset Visual</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
@@ -1055,15 +1055,15 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 6. PAYMENT CHANNEL ═══════════════ -->
   <section class="section" id="sec-payment">
     <div class="sec-head">
       <div class="sec-head-title">Channel Pembayaran</div>
       <span style="font-size:13px;color:var(--text2);">Pilih metode pembayaran yang tersedia di toko Anda</span>
     </div>
-
+ 
     <div style="margin-bottom:20px;">
       <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--text2);letter-spacing:1px;margin-bottom:12px;">QRIS & DOMPET DIGITAL</div>
       <div class="channel-grid">
@@ -1099,7 +1099,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div style="margin-bottom:20px;">
       <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--text2);letter-spacing:1px;margin-bottom:12px;">TRANSFER BANK</div>
       <div class="channel-grid">
@@ -1125,7 +1125,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title" style="margin-bottom:14px;">Pengaturan Fee & Biaya Transaksi</div>
       <div class="form-row">
@@ -1149,8 +1149,8 @@
       <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan</button>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 7. LAPORAN & STATISTIK ═══════════════ -->
   <section class="section" id="sec-laporan">
     <div class="sec-head">
@@ -1160,7 +1160,7 @@
         <button class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> Export PDF</button>
       </div>
     </div>
-
+ 
     <div class="stats-big">
       <div class="card">
         <div class="card-title" style="margin-bottom:6px;">Omzet Bulan Ini</div>
@@ -1189,7 +1189,7 @@
           <div class="mini-bar-val">20%</div>
         </div>
       </div>
-
+ 
       <div class="card">
         <div class="card-title" style="margin-bottom:6px;">Transaksi Sukses</div>
         <div style="font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--green);">3.412</div>
@@ -1200,7 +1200,7 @@
         <div style="font-size:13px;margin-bottom:6px;">2. Free Fire 1000 <span style="float:right;color:var(--gold);">634 trx</span></div>
         <div style="font-size:13px;">3. PUBG UC 325 <span style="float:right;color:var(--gold);">512 trx</span></div>
       </div>
-
+ 
       <div class="card">
         <div class="card-title" style="margin-bottom:6px;">Rata-rata Harian</div>
         <div style="font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--accent);">Rp 2,8jt</div>
@@ -1210,7 +1210,7 @@
         <div class="bar-chart" id="hour-chart" style="height:60px;"></div>
       </div>
     </div>
-
+ 
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;">
       <div class="card">
         <div class="card-head">
@@ -1248,12 +1248,12 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ═══════════════ 8. AKUN ═══════════════ -->
   <section class="section" id="sec-akun">
     <div class="sec-head"><div class="sec-head-title">Manajemen Akun</div></div>
-
+ 
     <div class="account-hero">
       <div class="av-big">ZV</div>
       <div>
@@ -1269,7 +1269,7 @@
         <button class="btn btn-outline"><i class="fa-solid fa-camera"></i> Ganti Foto</button>
       </div>
     </div>
-
+ 
     <div class="settings-grid">
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-user"></i> Profil Admin</div>
@@ -1291,7 +1291,7 @@
         </div>
         <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan Profil</button>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-lock"></i> Keamanan Akun</div>
         <div class="form-group" style="margin-bottom:12px;">
@@ -1316,7 +1316,7 @@
           <div class="ch-toggle" id="toggle2fa" onclick="this.classList.toggle('on')"></div>
         </div>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-bell"></i> Notifikasi</div>
         <div style="display:flex;flex-direction:column;gap:14px;">
@@ -1357,7 +1357,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="setting-card">
         <div class="setting-title"><i class="fa-solid fa-circle-info"></i> Info Akun</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -1382,16 +1382,16 @@
       </div>
     </div>
   </section>
-
+ 
 </div><!-- /main -->
 </div><!-- /shell -->
-
+ 
 <script>
   // Date
   const d = new Date();
   document.getElementById('topbar-date').textContent =
     d.toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
-
+ 
   // Navigation
   const titles = {
     dashboard:'Dashboard',produk:'Manajemen Produk',transaksi:'Manajemen Transaksi',
@@ -1425,7 +1425,7 @@
       }, 50);
     }
   }
-
+ 
   // Bar Chart Builder
   function buildBars(containerId, data, colors) {
     const c = document.getElementById(containerId);
@@ -1453,26 +1453,26 @@
       c.appendChild(wrap);
     });
   }
-
+ 
   const days = ['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
   const dayData = [[120,80],[180,120],[95,60],[220,150],[190,130],[310,200],[270,180]];
   buildBars('main-barchart', dayData, days);
-
+ 
   const hours = [10,5,4,3,8,12,18,25,22,20,30,35,40,38,35,30,28,25,40,45,38,30,22,15];
   const hourLabels = hours.map((_,i)=>i%6===0?i+'h':'');
   buildBars('hour-chart', hours, hourLabels);
-
+ 
   const monthDays = Array.from({length:25},()=>Math.round(Math.random()*80+40));
   const monthLabels = monthDays.map((_,i)=>(i+1)%5===0?(i+1)+'':'');
   buildBars('monthly-chart', monthDays, monthLabels);
-
+ 
   // Payment toggle
   function toggleChannel(toggleEl, cardId) {
     toggleEl.classList.toggle('on');
     const card = document.getElementById(cardId);
     if (card) card.classList.toggle('enabled');
   }
-
+ 
   // ── SESSION CHECK ──
   // Simple session guard: if came directly (no referrer from login), allow for dev.
   // In production, replace with real session/token check.
@@ -1484,13 +1484,171 @@
     }
   }
   checkSession();
-
+ 
   // ── LOGOUT ──
   function doLogout() {
-    if (!confirm('Yakin ingin keluar dari panel admin?')) return;
     sessionStorage.removeItem('zv_logged_in');
-    window.location.href = 'index.html';
+    sessionStorage.removeItem('zv_user');
+    sessionStorage.removeItem('zv_role');
+    window.location.replace('index.html');
   }
 </script>
+ 
+ 
+ 
+<!-- ═══ LOGOUT MODAL ═══ -->
+<div id="logout-modal" style="
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  align-items:center; justify-content:center;
+  animation:none;
+">
+  <div id="logout-card" style="
+    background:#FFFFFF;
+    border-radius:20px;
+    width:380px;
+    max-width:92vw;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.05);
+    transform:scale(0.88) translateY(20px);
+    opacity:0;
+    transition:transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.25s ease;
+  ">
+    <!-- TOP BANNER -->
+    <div style="
+      background:linear-gradient(135deg,#4F46E5 0%,#7C3AED 100%);
+      padding:28px 24px 20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    ">
+      <!-- decorative circles -->
+      <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.06);top:-60px;right:-40px;"></div>
+      <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.06);bottom:-50px;left:-30px;"></div>
+      <!-- icon -->
+      <div style="
+        width:64px;height:64px;
+        background:rgba(255,255,255,0.15);
+        border:2px solid rgba(255,255,255,0.25);
+        border-radius:50%;
+        display:flex;align-items:center;justify-content:center;
+        margin:0 auto 14px;
+        position:relative;z-index:1;
+      ">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </div>
+      <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;position:relative;z-index:1;">Leaving so soon?</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:5px;position:relative;z-index:1;">You are about to sign out of Admin Panel</div>
+    </div>
+ 
+    <!-- BODY -->
+    <div style="padding:24px 24px 10px;">
+      <!-- session info strip -->
+      <div style="
+        background:#F8F9FB;
+        border:1px solid #E2E6EE;
+        border-radius:12px;
+        padding:12px 16px;
+        display:flex;align-items:center;gap:12px;
+        margin-bottom:20px;
+      ">
+        <div style="
+          width:38px;height:38px;border-radius:50%;flex-shrink:0;
+          background:linear-gradient(135deg,#4F46E5,#DB2777);
+          display:flex;align-items:center;justify-content:center;
+          font-size:14px;font-weight:700;color:#fff;
+        ">ZV</div>
+        <div>
+          <div style="font-size:13.5px;font-weight:600;color:#111827;">Admin Master</div>
+          <div style="font-size:11.5px;color:#9CA3AF;margin-top:1px;">Superadmin · ZEROVOXYN STORE</div>
+        </div>
+        <div style="margin-left:auto;">
+          <span style="
+            background:rgba(5,150,105,0.1);color:#059669;
+            font-size:11px;font-weight:600;
+            padding:3px 9px;border-radius:20px;
+            display:flex;align-items:center;gap:4px;
+          ">
+            <span style="width:5px;height:5px;background:#059669;border-radius:50%;display:inline-block;"></span>
+            Active
+          </span>
+        </div>
+      </div>
+ 
+      <p style="font-size:13.5px;color:#4B5563;line-height:1.65;text-align:center;margin-bottom:22px;">
+        Your current session will be <strong style="color:#111827;">ended</strong> and all unsaved changes will be lost. Are you sure you want to log out?
+      </p>
+ 
+      <!-- BUTTONS -->
+      <div style="display:flex;gap:10px;margin-bottom:20px;">
+        <button onclick="hideLogoutConfirm()" id="cancel-logout-btn" style="
+          flex:1;padding:12px;border-radius:10px;
+          border:1px solid #E2E6EE;background:#F8F9FB;
+          color:#4B5563;cursor:pointer;
+          font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+          transition:all .15s;
+        "
+        onmouseover="this.style.background='#F0F2F5';this.style.borderColor='#C8D0DF'"
+        onmouseout="this.style.background='#F8F9FB';this.style.borderColor='#E2E6EE'"
+        >
+          Stay Here
+        </button>
+        <button onclick="doLogout()" style="
+          flex:1;padding:12px;border-radius:10px;
+          border:none;
+          background:linear-gradient(135deg,#DC2626,#B91C1C);
+          color:#fff;cursor:pointer;
+          font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;
+          transition:all .15s;
+          display:flex;align-items:center;justify-content:center;gap:8px;
+          box-shadow:0 4px 14px rgba(220,38,38,0.3);
+        "
+        onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 6px 20px rgba(220,38,38,0.4)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 14px rgba(220,38,38,0.3)'"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Yes, Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<script>
+function showLogoutConfirm() {
+  const modal = document.getElementById('logout-modal');
+  const card  = document.getElementById('logout-card');
+  modal.style.display = 'flex';
+  // trigger animation next frame
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      card.style.transform = 'scale(1) translateY(0)';
+      card.style.opacity   = '1';
+    });
+  });
+}
+function hideLogoutConfirm() {
+  const modal = document.getElementById('logout-modal');
+  const card  = document.getElementById('logout-card');
+  card.style.transform = 'scale(0.88) translateY(20px)';
+  card.style.opacity   = '0';
+  setTimeout(() => { modal.style.display = 'none'; }, 260);
+}
+// close on backdrop click
+document.getElementById('logout-modal').addEventListener('click', function(e) {
+  if (e.target === this) hideLogoutConfirm();
+});
+</script>
+ 
 </body>
 </html>
